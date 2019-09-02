@@ -12,6 +12,7 @@ export class AppComponent {
 
   constructor(private config: ConfigService, private service: TablaService ) {}
   title = this.config.settings.titulo;
+  titleForm = 'Comision P2M';
   info: object;
   pagina( data ) {
     console.log('llega: ', data);

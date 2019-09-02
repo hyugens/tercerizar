@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 
 import { ConfigService } from './services/config.service';
 import { TablaComponent } from './components/tabla/tabla.component';
+import { SortComponent } from './components/sort/sort.component';
 import { FormComponent } from './components/form/form.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -20,13 +23,15 @@ export function initializeApp(appConfig: ConfigService) {
   declarations: [
     AppComponent,
     TablaComponent,
-    FormComponent
+    FormComponent,
+    SortComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MyMaterialModule
+    MyMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     ConfigService,

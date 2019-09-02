@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  options: FormGroup;
+  @Input() public titulo: string;
+
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      hideRequired: false,
+      floatLabel: 'auto',
+    });
+  }
 
   ngOnInit() {
   }
